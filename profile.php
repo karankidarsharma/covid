@@ -1,4 +1,6 @@
 <?php session_start();
+ $date = date('Y-m-d');
+ echo $date;
 
 if(!isset($_SESSION['user_id'])){
     header('location: index.php?isloggedin=false');
@@ -90,6 +92,7 @@ if(!isset($_SESSION['user_id'])){
         </form>
 <br><br>
 <?php
+
 
 $sql = "SELECT * FROM person WHERE users_id =".$_SESSION['user_id']." ORDER BY id DESC";
 

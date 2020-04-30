@@ -32,16 +32,16 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
                         $_SESSION['email'] = $user_email;
                         header('location: profile.php?loggedin=true');
                     }else{
-                        echo "USER NAME OR PASSWORD IS INCORRECT";
+                        header('location: index.php?user=error');
                         
                        
                     }
                 }
                 else{
-                    echo "SOMETHING WENT WRONG";
+                    header('location: index.php?user=error');
                 }
             }else{
-                echo "NO ACCOUNT FOUND";
+                header('location: index.php?user=error');
             }
 
             $query->close();

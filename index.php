@@ -63,6 +63,17 @@ session_start();
        <?php
   }
   ?>
+  <!-- Error -->
+  <?php
+    if(isset($_GET['user']) && $_GET['user'] === "error"){
+      ?>
+       <div class="alert alert-danger" role="alert">
+       No user found!
+       
+       </div>
+       <?php
+  }
+  ?>
 <h3>Please Login</h3>
     <div id="alert" style="display:none;" class="alert alert-danger" role="alert">
 
