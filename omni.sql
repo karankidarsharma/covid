@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 29, 2020 at 03:05 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.2.22
+-- Host: localhost:3306
+-- Generation Time: May 04, 2020 at 07:01 PM
+-- Server version: 10.2.31-MariaDB-log-cll-lve
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `omni`
+-- Database: `aggarwal_covid`
 --
 
 -- --------------------------------------------------------
@@ -40,8 +40,8 @@ CREATE TABLE `person` (
 --
 
 INSERT INTO `person` (`id`, `users_id`, `person`, `date_time`) VALUES
-(3, 12, 'James', '2020-04-29'),
-(4, 14, 'Jacob', '2020-04-29');
+(2, 16, 'Jacinda', '2020-04-30'),
+(4, 15, 'Jacinda Ardern', '2020-04-30');
 
 -- --------------------------------------------------------
 
@@ -52,19 +52,17 @@ INSERT INTO `person` (`id`, `users_id`, `person`, `date_time`) VALUES
 CREATE TABLE `users` (
   `id` int(4) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `user_password` varchar(120) NOT NULL
+  `user_password` varchar(120) NOT NULL,
+  `reset_pass` varchar(120) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `user_password`) VALUES
-(10, 'karan@gmail.com', '$2y$10$7dafcmEE483tLz43/aZJi.sL.IcwJ/Yh27i6/vP0SoR'),
-(11, 'John@gmail.com', '$2y$10$NYBtr9ZFct76j9QKUQew9u2ml1YrX.QrLX5QCkeTEVh'),
-(12, 'kim@gmail.com', '$2y$10$/KbuAX4x15SED7IezOWtwOL1fN7xiC2zNCuSBm3750es9a1ZTbYIe'),
-(13, 'low@gmail.com', '$2y$10$mGrGgK1YP8KNISrc0HjW0.ugeP0am9jQ5IXmiDn4hZ8w/J8l7ydYO'),
-(14, 'test@gmail.com', '$2y$10$IrCQEQyjH4dKYvn8V7XJUuYffBwObcwNoxs/RhLT/Bd54WSmvZCqe');
+INSERT INTO `users` (`id`, `email`, `user_password`, `reset_pass`) VALUES
+(15, 'karan@gmail.com', '$2y$10$pSTZwC5pr/MjOffekV2J8O5SA7lqKKoXbSp/OFzsGyHA/jeUEgxV6', 'f8e7631cd638952e41fa19b2b70cc49c5eb065271e30e'),
+(16, 'james@gmail.com', '$2y$10$C6XkhlosLkbtfkMIFE0FoOQDuwT23JHvHSfmmNGpv5edPKix/x5ea', '');
 
 --
 -- Indexes for dumped tables
@@ -96,7 +94,7 @@ ALTER TABLE `person`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
