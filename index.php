@@ -68,7 +68,19 @@ session_start();
     if(isset($_GET['user']) && $_GET['user'] === "error"){
       ?>
        <div class="alert alert-danger" role="alert">
-       No user found!
+       Incorrect Email or Password!
+       
+       </div>
+       <?php
+  }
+  ?>
+   <!-- Error -->
+   <?php
+    if(isset($_GET['password']) && $_GET['password'] === "changed"){
+      ?>
+       <div class="alert alert-success" role="alert">
+       Password Changed!
+       Login to continue.
        
        </div>
        <?php
@@ -90,10 +102,14 @@ session_start();
           <input id="password" type="password" name="password" class="form-control" id="exampleInputPassword1">
         </div>
     
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary inline-block">Login</button> 
+        <a href="register.php" class="btn btn-info inline-block">Register Now</a>
+        
       </form>
       <br>
-      <a href="register.php" class="btn btn-info block">Register Now</a>
+      <a href="forgetpassword.php">Forgot Password</a>
+      <br>
+      
     </div>
 </body>
 </html>

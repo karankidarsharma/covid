@@ -1,6 +1,6 @@
 <?php session_start();
  $date = date('Y-m-d');
- echo $date;
+
 
 if(!isset($_SESSION['user_id'])){
     header('location: index.php?isloggedin=false');
